@@ -20,10 +20,8 @@ public class SecurityUtility {
     @Bean
     public static String randomPassword() {
         String SALT_CHARS = "qwertyuiopasdfghjklzxcvbnm123456789";
-
         StringBuilder salt = new StringBuilder();
         Random random = new Random();
-
         while (salt.length() < 18) {
             int index = (int) (random.nextFloat() * SALT_CHARS.length());
             salt.append(SALT_CHARS.charAt(index));

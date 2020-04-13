@@ -1,0 +1,30 @@
+server:
+    port: 8091
+
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/mytestdb
+        username: mytestuser
+        password: rasul123
+        driver-class-name: org.postgresql.Driver
+        initialization-mode: always
+        continue-on-error: true
+    jpa:
+        show-sql: true
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        hibernate:
+            ddl-auto: update
+
+security:
+    oauth2:
+        resource:
+            user-info-uri: http://localhost:8901/user
+
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
