@@ -1,0 +1,11 @@
+spring:
+    cloud:
+        config:
+            uri: http://localhost:8083
+
+
+logging:
+    level:
+        com.netflix: WARN
+        org.springframework.web: warn
+        com.itemsharing: debug
