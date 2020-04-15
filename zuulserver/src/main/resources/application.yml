@@ -15,8 +15,15 @@ zuul:
         itemservice: /item/**
     ignored-services: '*'
     prefix: /api
+    sensitive-headers: Cookie, Set-Cookie
 logging:
     level:
         com.netflix: warn
         org.springframework.web: warn
         com.itemsharing: debug
+spring:
+    application:
+        name: zuulservice
+    zipkin:
+        base-url: localhost:9411
+

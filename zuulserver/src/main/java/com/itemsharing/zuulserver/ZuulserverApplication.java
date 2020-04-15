@@ -1,5 +1,6 @@
 package com.itemsharing.zuulserver;
 
+import brave.sampler.Sampler;
 import com.itemsharing.zuulserver.util.UserContextInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,11 @@ import java.util.List;
 @SpringBootApplication
 @EnableZuulProxy
 public class ZuulserverApplication {
+
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
+    }
 
     @Bean
     public RestTemplate getRestTemplate() {

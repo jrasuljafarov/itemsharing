@@ -4,3 +4,5 @@ spring:
             uri: http://localhost:8083
     application:
         name: userservice
+    zipkin:
+        baseUrl: http://localhost:9411
